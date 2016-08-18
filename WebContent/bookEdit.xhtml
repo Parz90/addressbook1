@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:body>
+		<ui:composition template="/templates/template.xhtml">
+    		
+			<ui:define name="content">
+			<h:form>	
+				<div align="center">
+				<h:messages style="color: red" />	
+					<h:panelGrid id="panel" columns="2" border="1" width="500" >
+					
+						<h:outputLabel value="Name" />
+						<h:outputLabel value="#{parkingBlockBean.parkName}" />
+						
+						<h:outputLabel value="Anzahl Plätze" />
+						<h:inputText id="anzahlPlaetze" size= "50" value="#{parkingBlockBean.cap}">
+							<f:validateRequired />
+							<f:validateLongRange minimum="0" />
+						</h:inputText>
+						
+						<h:outputLabel value="Adresse" />
+						<h:inputText id="adresseZeile1" size= "50" value="#{parkingBlockBean.address1}" >
+							<f:validateRequired />
+						</h:inputText>
+						
+						<h:outputLabel value=" " />
+						<h:inputText id="adresseZeile2" size= "50" value="#{parkingBlockBean.address2}" >
+							<f:validateRequired />
+						</h:inputText>						
+								
+						<h:outputLabel value="Öffnungszeiten" />
+						<h:inputText id="oeffnungszeitenZeile1" size= "50" value="#{parkingBlockBean.openTime1}" >
+							<f:validateRequired />
+						</h:inputText>
+						
+						<h:outputLabel value=" " />
+						<h:inputText id="oeffnungszeitenZeile2" size= "50" value="#{parkingBlockBean.openTime2}" />						
+						
+						<h:outputLabel value="Betrieberin" />
+						<h:inputText id="betreiberZeile1" size= "50" value="#{parkingBlockBean.company1}" >
+							<f:validateRequired />
+						</h:inputText>
+						
+						<h:outputLabel value=" " />
+						<h:inputText id="betreiberZeile2" size= "50" value="#{parkingBlockBean.company2}" />
+						
+						<h:outputLabel value=" " />
+						<h:inputText id="betreiberZeile3" size= "50" value="#{parkingBlockBean.company3}" />
+						
+						<h:outputLabel value=" " />
+						<h:inputText id="betreiberZeile4" size= "50" value="#{parkingBlockBean.company4}" />
+						
+						<h:outputLabel value="Besonderes" />
+						<h:inputText id="besonderesZeile1" size= "50" value="#{parkingBlockBean.specInfo1}" />
+						
+						<h:outputLabel value=" " />
+						<h:inputText id="besonderesZeile2" size= "50" value="#{parkingBlockBean.specInfo2}" />
+						
+						<h:outputLabel value=" " />
+						<h:inputText id="besonderesZeile3" size= "50" value="#{parkingBlockBean.specInfo3}" />
+						
+						<h:outputLabel value=" " />
+						<h:inputText id="besonderesZeile4" size= "50" value="#{parkingBlockBean.specInfo4}" />
+						
+						<h:commandButton id="cancel" action="#{parkingBlockBean.cancel}" value="Cancel" />
+						<h:commandButton id="save" action="#{parkingBlockBean.save}" value="Save" />
+						
+					</h:panelGrid>
+				</div>			
+				</h:form>
+    		</ui:define>
+    		 				
+    	</ui:composition>
+	</h:body>
+</html>

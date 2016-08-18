@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<h:body>
+		<ui:composition template="/templates/template.xhtml">
+    		
+			<ui:define name="content">
+			<h:form>
+
+				<div align="center">		
+					<h:panelGrid id="panel" columns="2" border="1" width="500" >
+					
+						<h:outputLabel value="Vorname" />
+						<h:outputLabel size= "50"  value="#{addressbookBean.firstName}" />
+						
+						<h:outputLabel value="Nachname" />
+						<h:outputLabel size= "50"  value="#{addressbookBean.lastName}" />
+						
+						<h:outputLabel value="1. Telefonnummer" />
+						<h:outputLabel size= "50"  value="#{addressbookBean.tel1}" />
+						
+						<h:outputLabel value="2. Telefonnummer (Handynumer)" />
+						<h:outputLabel size= "50"  value="#{addressbookBean.tel2}" />
+								
+						<h:outputLabel value="E-Mail" />
+						<h:outputLabel size= "50"  value="#{addressbookBean.email}" />
+						
+						<h:outputLabel value="Webseite" />
+						<h:outputLabel size= "50"  value="#{addressbookBean.website}" />						
+						
+						<h:outputLabel value="Adresse" />
+						<h:outputLabel size= "50"  value="#{addressbookBean.address1}" />
+						
+						<h:outputLabel value="-" />
+						<h:outputLabel size= "50"  value="#{addressbookBean.address2}" />
+						
+						<h:outputLabel value="-" />
+						<h:outputLabel size= "50"  value="#{addressbookBean.address3}" />
+						
+						<h:outputLabel value="Besonderes / Bemerkungen" />
+						<h:outputLabel size= "50"  value="#{addressbookBean.besonderes1}" />
+						
+						<h:outputLabel value="-" />
+						<h:outputLabel size= "50"  value="#{addressbookBean.besonderes2}" />
+						
+						<h:outputLabel value="-" />
+						<h:outputLabel size= "50"  value="#{addressbookBean.besonderes3}" />
+						
+						<h:outputLabel value="-" />
+						<h:outputLabel size= "50"  value="#{addressbookBean.besonderes4}" />
+						
+						<h:outputLabel value=" " />
+						<h:commandButton id="back" action="#{parkingBlockBean.overview}" value="Back" />
+
+					</h:panelGrid>
+				</div>			
+
+			</h:form>
+    		</ui:define>
+    		 				
+    	</ui:composition>
+	</h:body>
+</html>

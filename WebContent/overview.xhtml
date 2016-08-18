@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:body>
+	<ui:composition template="/templates/template.xhtml">
+		<ui:define name="content">
+			<h:form>
+				<div align="center">
+
+					<h:dataTable id="addressTable"
+						value="#{addressbookBean.addressbooks}" var="address" border="1"
+						cellpadding="10"  width="900" >
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputLabel value="Vorname" />
+							</f:facet>
+							<h:commandLink value="#{address.firstName}"
+								action="#{addressbookBean.show(address.firstName)}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputLabel value="Nachname" />
+							</f:facet>
+							<h:outputLabel value="#{address.lastName}" />
+						</h:column>
+
+						<h:column>
+							<f:facet name="header">
+								<h:outputLabel value="Telefonnummer" />
+							</f:facet>
+							<h:outputLabel value="#{address.tel1}" />
+						</h:column>
+
+					</h:dataTable>
+
+					<br />
+					<h:commandButton id="refresh" action="#{addressbookBean.overview}"
+						value="Refresh" />
+
+				</div>
+				<br />
+				<h:outputLabel value="Last refresh: " />
+				<h:panelGrid id="panel" columns="2" border="1">
+					<h:outputLabel value="Datum: " />
+					<h:outputText value="#{time}">
+						<f:convertDateTime pattern="dd.MM.yyyy" timeZone="Europe/Zurich"
+							type="date" />
+					</h:outputText>
+					<h:outputLabel value="Zeit: " />
+					<h:outputText value="#{time}">
+						<f:convertDateTime pattern="HH:mm:ss" timeZone="Europe/Zurich"
+							type="time" />
+					</h:outputText>
+				</h:panelGrid>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

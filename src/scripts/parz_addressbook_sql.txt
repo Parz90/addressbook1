@@ -1,0 +1,53 @@
+﻿DROP TABLE addressbook;
+
+CREATE TABLE addressbook ( 
+ph_id int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+vorname varchar(50) NOT NULL,
+nachname varchar(50) NOT NULL,
+telefonnummer_1 varchar(50) DEFAULT NULL,
+telefonnummer_2 varchar(50) DEFAULT NULL,
+e_mail varchar(50) DEFAULT NULL,
+website varchar(50) DEFAULT NULL,
+adresse_1 varchar(50) DEFAULT NULL,
+adresse_2 varchar(50) DEFAULT NULL,
+adresse_3 varchar(50) DEFAULT NULL,
+besonderes_1 varchar(50) DEFAULT NULL,
+besonderes_2 varchar(50) DEFAULT NULL,
+besonderes_3 varchar(50) DEFAULT NULL,
+besonderes_4 varchar(50) DEFAULT NULL,
+bild varchar(50) DEFAULT NULL);
+
+INSERT INTO addressbook VALUES (
+null, 
+"Parthipan",
+"Nagulanandan",
+"055/534 57 61",
+"079/270 56 70",
+"p.nagulanandan@gmail.com",
+"-",
+"Dorfstrasse 10",	
+"8630 Rüti ZH",	
+"Schweiz",	
+"Wohnt seit Dezember 2016 in Rüti ZH",
+"-",			
+"-",
+"-",
+"img_central.jpg");
+
+INSERT INTO addressbook VALUES (
+null, 
+"Janitha",
+"Sounthararajah",
+"055/534 57 61",
+"079/270 56 70",
+"p.nagulanandan@gmail.com",
+"-",
+"Dorfstrasse 10",	
+"8630 Rüti ZH",	
+"Schweiz",	
+"Wohnt seit Dezember 2016 in Rüti ZH",
+"-",			
+"-",
+"-",
+"img_central.jpg");
+
